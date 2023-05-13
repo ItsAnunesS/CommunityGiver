@@ -5,7 +5,7 @@
         <label tabindex="0" class="btn btn-ghost lg:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
         </label>
-        <a class="btn btn-ghost btn-circle normal-case text-xl">
+        <a class="btn btn-ghost btn-circle normal-case text-xl hidden lg:flex">
           <IconCG class="h-12 w-full mx-auto my-auto" />
         </a>
       </div>
@@ -26,7 +26,8 @@
         </ul>
       </div>
       <div class="navbar-end">
-        <button @click="connectMetamask" class="btn">
+        <button @click="connectMetamask" class="btn gap-2">
+          <IconMetamask class="h-5" />
           {{ $t(textMetamask) }}
         </button>
       </div>
@@ -36,17 +37,23 @@
 
 <script setup lang="ts">
 import { ethers } from "ethers";
+import { useMetamaskStore } from '~/stores/metamask';
+
+const store = useMetamaskStore();
 
 const connectMetamask = async () => {
-  let signer = null;
-  let provider;
-
   if (process.client) {
     if (window.ethereum == null) {
       window.open("https://metamask.io/download/", "_blank");
     } else {
-      provider = new ethers.BrowserProvider(window.ethereum)
-      signer = await provider.getSigner();
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      store.setProvider(provider);
+      const signer = await provider.getSigner();
+      store.setSigner(signer);
+      const address = signer.address;
+      store.setAddress(address);
+      console.log(signer.address);
+      textMetamask = signer.address;
     }
   }
 };

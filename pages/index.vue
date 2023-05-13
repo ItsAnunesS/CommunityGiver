@@ -1,8 +1,11 @@
 <template>
   <div>
-    oi
+    {{ store.getAddress() }}
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+import { useMetamaskStore } from '~/stores/metamask';
+
+const store = useMetamaskStore();
 </script>

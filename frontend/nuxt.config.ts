@@ -19,9 +19,11 @@ export default defineNuxtConfig({
   },
   pinia: {
     autoImports: [
-      // automatically imports `defineStore`
       'defineStore', // import { defineStore } from 'pinia'
       ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
     ],
   },
+  runtimeConfig: {
+    contractAddress: "0xfee9A2e6AAb4d0cDDC6BCd4Ef9cA638856f3d801"
+  }
 })

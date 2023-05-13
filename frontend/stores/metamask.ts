@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia';
 
 export const useMetamaskStore = defineStore('metamask', () => {
-  const signer = ref();
-  const address = ref();
-  const provider = ref();
+  const signer = ref(null);
+  const address = ref("");
+  const provider = ref(null);
 
   const setSigner = (newSigner: any) => {
     signer.value = newSigner;

@@ -1,6 +1,6 @@
 <template>
-  <nav class="container mx-auto bg-base-100">
-    <div class="navbar">
+  <nav class="bg-base-100 border-b-2 sticky top-0">
+    <div class="navbar container mx-auto">
       <div class="navbar-start">
         <label tabindex="0" class="btn btn-ghost lg:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -26,9 +26,13 @@
         </ul>
       </div>
       <div class="navbar-end">
-        <button @click="connectMetamask" class="btn gap-2">
+        <button v-if="!store.getAddress()" @click="connectMetamask" class="btn gap-2">
           <IconMetamask class="h-5" />
           {{ $t(textMetamask) }}
+        </button>
+        <button v-else class="btn gap-2">
+          <IconMetamask class="h-5" />
+          {{ truncateAddress(store.getAddress(), 4) }}
         </button>
       </div>
     </div>
@@ -41,19 +45,56 @@ import { useMetamaskStore } from '~/stores/metamask';
 
 const store = useMetamaskStore();
 
+const truncateAddress = (address: string, size: number) => {
+  return `${address.substring(0, size)}...${address.substring(address.length - size, address.length)}`;
+};
+
 const connectMetamask = async () => {
   if (process.client) {
     if (window.ethereum == null) {
       window.open("https://metamask.io/download/", "_blank");
     } else {
-      const provider = new ethers.BrowserProvider(window.ethereum);
-      store.setProvider(provider);
-      const signer = await provider.getSigner();
-      store.setSigner(signer);
-      const address = signer.address;
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const address = await signer.getAddress();
       store.setAddress(address);
-      console.log(signer.address);
-      textMetamask = signer.address;
+
+      window.ethereum.on("accountsChanged", (accounts: string[]) => {
+        store.setAddress(accounts[0]);
+      });
+
+      window.ethereum.on("chainChanged", (chainId: string) => {
+        window.location.reload();
+      });
+
+      window.ethereum.on("disconnect", (error: { code: number; message: string }) => {
+        store.setAddress("");
+      });
+
+      window.ethereum.on("connect", (connectInfo: { chainId: string }) => {
+        window.location.reload();
+      });
+
+      window.ethereum.on("networkChanged", (networkId: string) => {
+        window.location.reload();
+      });
+
+      window.ethereum.on("message", (message: any) => {
+        console.log(message);
+      });
+
+      window.ethereum.on("error", (error: { code: number; message: string }) => {
+        console.log(error);
+      });
+
+      window.ethereum.on("close", (code: number, reason: string) => {
+        console.log(code, reason);
+      });
+
+      window.ethereum.on("open", () => {
+        console.log("open");
+      });
+
     }
   }
 };

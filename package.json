@@ -18,6 +18,6 @@
   },
   "dependencies": {
     "@thirdweb-dev/sdk": "^3.10.14",
-    "ethers": "5"
+    "ethers": "^6.3.0"
   }
 }

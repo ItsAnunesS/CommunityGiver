@@ -8,7 +8,7 @@
   },
   "metamask": {
     "profile": "Profile",
-    "add": "Add Project",
+    "add": "Add Cause",
     "disconnect": "Logout"
   },
   "discord": {
@@ -18,9 +18,14 @@
   },
   "project": {
     "add": {
-      "title": "Get Support for Your Charity Project",
+      "title": "Get Support for Your Charity cause",
       "subtitle": "Make a Difference with Our Assistance!",
-      "btn": "Add Project for review"
+      "btn": "Add Cause for review"
+    },
+    "hero": {
+      "title": "Donate Makes the Difference",
+      "description": "Explore the projects that are changing lives and contribute to the causes that matter most to you. Your donation can create a meaningful impact and help support initiatives in areas such as education, healthcare, environment, and more. Join us in making a difference and empower positive change through your generosity.",
+      "btn":"Add Cause for review"
     }
   },
   "profile": {

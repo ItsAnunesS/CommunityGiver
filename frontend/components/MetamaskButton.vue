@@ -7,13 +7,13 @@
     <div v-else class="dropdown dropdown-end">
       <label tabindex="0" class="btn m-1 bg-violet-900 hover:bg-violet-800 gap-2 text-white">
         <IconMetamask class="h-5" />
-        {{ truncateAddress(store.getAddress(), 4) }}
+        {{ store.getAddress(true) }}
       </label>
       <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-primary rounded-box w-52 text-white">
         <li>
-          <NuxtLink :href="localePath('/profile')">
+          <label for="modal-profile">
             {{ $t("metamask.profile") }}
-          </NuxtLink>
+          </label>
         </li>
         <li>
           <label for="modal-add-project">
@@ -35,10 +35,6 @@ import { ethers } from "ethers";
 import { useMetamaskStore } from '~/stores/metamask';
 
 const store = useMetamaskStore();
-
-const truncateAddress = (address: string, size: number) => {
-  return `${address.substring(0, size)}...${address.substring(address.length - size, address.length)}`;
-};
 
 const connectMetamask = async () => {
   if (process.client) {

@@ -22,5 +22,10 @@
       "subtitle": "Make a Difference with Our Assistance!",
       "btn": "Add Project for review"
     }
+  },
+  "profile": {
+    "title": "Hello, {address}!",
+    "btn1": "Buy G.I.V.E",
+    "btn2": "Donate"
   }
 }

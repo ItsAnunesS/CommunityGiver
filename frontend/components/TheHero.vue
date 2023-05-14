@@ -1,5 +1,5 @@
 <template>
-  <div class="hero min-h-screen bg-black">
+  <div class="hero min-h-screen bg-gray-950">
     <div class="hero-content text-center">
       <div class="max-w-xl">
         <h1 class="text-5xl font-bold">{{ $t("hero.title") }}</h1>

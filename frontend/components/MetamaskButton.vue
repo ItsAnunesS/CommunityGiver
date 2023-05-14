@@ -42,6 +42,7 @@ const connectMetamask = async () => {
       window.open("https://metamask.io/download/", "_blank");
     } else {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
+      await provider.send("eth_requestAccounts", []);
       const signer = provider.getSigner();
       const address = await signer.getAddress();
       store.setAddress(address);

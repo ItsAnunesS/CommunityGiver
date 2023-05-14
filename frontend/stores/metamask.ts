@@ -19,6 +19,11 @@ export const useMetamaskStore = defineStore('metamask', () => {
 
   const getAddress = (truncate: boolean = false) => {
     const storeAddress = address.value;
+
+    if (!storeAddress) {
+      return undefined;
+    }
+
     return truncate ? `${storeAddress.substring(0, 4)}...${storeAddress.substring(storeAddress.length - 4, storeAddress.length)}` : storeAddress;
   };
 

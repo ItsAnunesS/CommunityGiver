@@ -8,12 +8,18 @@
     </div>
     <div class="drawer-side">
       <label for="my-drawer-3" class="drawer-overlay"></label>
-      <ul class="menu p-4 w-80 bg-base-100">
-        <!-- Sidebar content here -->
-        <li><a>Sidebar Item 1</a></li>
-        <li><a>Sidebar Item 2</a></li>
-
+      <ul class="menu p-4 w-80 bg-black border-r border-primary">
+        <li v-for="page in pages">
+          <NuxtLink :href="localePath(page.path)" class="text-white scale-100 hover:text-primary">
+            {{ page.name }}
+          </NuxtLink>
+        </li>
       </ul>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const localePath = useLocalePath()
+const pages = usePages();
+</script>

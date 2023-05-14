@@ -1,0 +1,55 @@
+specVersion: 0.0.5
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Contract
+    network: goerli
+    source:
+      address: "0xfee9A2e6AAb4d0cDDC6BCd4Ef9cA638856f3d801"
+      abi: Contract
+      startBlock: 8994345
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - DelegateChanged
+        - DelegateVotesChanged
+        - PlatformFeeInfoUpdated
+        - PrimarySaleRecipientUpdated
+        - RoleAdminChanged
+        - RoleGranted
+        - RoleRevoked
+        - TokensMinted
+        - TokensMintedWithSignature
+        - Transfer
+      abis:
+        - name: Contract
+          file: Contract/abis/Contract.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: DelegateChanged(indexed address,indexed address,indexed address)
+          handler: handleDelegateChanged
+        - event: DelegateVotesChanged(indexed address,uint256,uint256)
+          handler: handleDelegateVotesChanged
+        - event: PlatformFeeInfoUpdated(indexed address,uint256)
+          handler: handlePlatformFeeInfoUpdated
+        - event: PrimarySaleRecipientUpdated(indexed address)
+          handler: handlePrimarySaleRecipientUpdated
+        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
+          handler: handleRoleAdminChanged
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
+        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleRevoked
+        - event: TokensMinted(indexed address,uint256)
+          handler: handleTokensMinted
+        - event: TokensMintedWithSignature(indexed address,indexed
+            address,(address,address,uint256,uint256,address,uint128,uint128,bytes32))
+          handler: handleTokensMintedWithSignature
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: Contract/Contract.wasm

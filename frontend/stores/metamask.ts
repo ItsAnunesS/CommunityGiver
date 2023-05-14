@@ -29,5 +29,11 @@ export const useMetamaskStore = defineStore('metamask', () => {
     return provider.value;
   };
 
-  return { setProvider, setSigner, setAddress, getProvider, getSigner, getAddress };
+  const disconnect = () => {
+    signer.value = null;
+    address.value = "";
+    provider.value = null;
+  };
+
+  return { setProvider, setSigner, setAddress, getProvider, getSigner, getAddress, disconnect };
 });

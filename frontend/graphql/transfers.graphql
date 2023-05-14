@@ -1,0 +1,7 @@
+ query transfers {
+  transfers() {
+    id
+    to
+    value
+  }
+}

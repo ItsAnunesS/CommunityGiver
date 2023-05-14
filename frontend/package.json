@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@graphprotocol/client-cli": "^2.2.22",
     "@nuxtjs/i18n": "^8.0.0-beta.12",
     "@nuxtjs/tailwindcss": "^6.6.8",
     "@types/node": "^18",
@@ -20,6 +21,7 @@
     "@pinia/nuxt": "^0.4.10",
     "@thirdweb-dev/sdk": "^3.10.14",
     "ethers": "^5",
+    "graphql": "^16.6.0",
     "pinia": "^2.0.36"
   }
 }

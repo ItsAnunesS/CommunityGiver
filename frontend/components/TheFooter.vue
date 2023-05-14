@@ -1,7 +1,7 @@
 <template>
-  <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+  <footer class="footer footer-center p-4 bg-primary text-base-content">
     <div>
-      <p>Copyright © {{ year }} - {{ $t('copyright') }}</p>
+      <p class="text-white">Copyright © {{ year }} - {{ $t('copyright') }}</p>
     </div>
   </footer>
 </template>

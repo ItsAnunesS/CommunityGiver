@@ -8,7 +8,7 @@
         </p>
         <div class="flex flex-col md:flex-row justify-center gap-4">
           <button class="btn btn-primary btn-outline rounded-full">{{ $t("hero.btn1") }}</button>
-          <button class="hidden md:flex btn btn-primary btn-outline rounded-full">{{ $t("hero.btn2") }}</button>
+          <label for="modal-discord" class="hidden md:flex btn btn-primary btn-outline rounded-full">{{ $t("hero.btn2") }}</label>
         </div>
       </div>
     </div>

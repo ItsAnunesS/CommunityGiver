@@ -16,9 +16,9 @@
           </NuxtLink>
         </li>
         <li>
-          <button>
+          <label for="modal-add-project">
             {{ $t("metamask.add") }}
-          </button>
+          </label>
         </li>
         <li>
           <button @click="disconnectMetamask">

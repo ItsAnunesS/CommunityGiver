@@ -2,7 +2,7 @@
   <nav class="bg-black border-b border-primary sticky top-0 z-50">
     <div class="navbar container mx-auto">
       <div class="navbar-start">
-        <label for="my-drawer-3" tabindex="0" class="btn btn-ghost lg:hidden">
+        <label for="app-drawer" tabindex="0" class="btn btn-ghost lg:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
         </label>
         <a class="btn bg-white hover:bg-white btn-circle normal-case text-xl hidden lg:flex scale-100 hover:scale-125">

@@ -10,5 +10,17 @@
     "profile": "Profile",
     "add": "Add Project",
     "disconnect": "Logout"
+  },
+  "discord": {
+    "title": "Discord Server Coming Soon!",
+    "description": "Since we are still in the early stages of development, we are not yet ready to launch our Discord server. We will be launching it soon, so stay tuned!",
+    "btn": "Gotcha!!!"
+  },
+  "project": {
+    "add": {
+      "title": "Get Support for Your Charity Project",
+      "subtitle": "Make a Difference with Our Assistance!",
+      "btn": "Add Project for review"
+    }
   }
 }

@@ -3,9 +3,9 @@
 [![Project Page](https://img.shields.io/badge/Project%20Page-EthGlobal-orange)](https://ethglobal.com/showcase/communitygiver-b4q45)
 [![Website](https://img.shields.io/badge/Website-CommunityGiver-brightgreen)](https://communitygiver.anuness.dev/)
 
-CommunityGiver is a revolutionary platform that empowers individuals to make a positive impact through decentralized philanthropy and community-driven initiatives. It leverages blockchain technology, smart contracts, and tokenization to create a transparent and efficient ecosystem for charitable contributions and social engagement.
+[CommunityGiver](https://communitygiver.anuness.dev/) is a revolutionary platform that empowers individuals to make a positive impact through decentralized philanthropy and community-driven initiatives. It leverages blockchain technology, smart contracts, and tokenization to create a transparent and efficient ecosystem for charitable contributions and social engagement.
 
-This project was created for the ETHGlobal Lisbon 2023 hackathon, and it won the Pool prize from The Graph Protocol.
+This project was created for the ETHGlobal Lisbon 2023 hackathon, and it won the Pool prize from [The Graph Protocol](https://thegraph.com/).
 
 ---
 
@@ -37,11 +37,11 @@ A hackathon is an event where developers, designers, and other tech enthusiasts 
 
 ## ETHGlobal Lisbon
 
-ETHGlobal Lisbon is an annual hackathon and conference focused on Ethereum and decentralized applications. It brings together developers, entrepreneurs, and industry experts from around the world to explore and build innovative blockchain solutions. ETHGlobal Lisbon offers an immersive experience of learning, networking, and hacking within the Ethereum ecosystem.
+[ETHGlobal Lisbon](https://ethglobal.com/) is an annual hackathon and conference focused on Ethereum and decentralized applications. It brings together developers, entrepreneurs, and industry experts from around the world to explore and build innovative blockchain solutions. ETHGlobal Lisbon offers an immersive experience of learning, networking, and hacking within the Ethereum ecosystem.
 
 ## The Graph Protocol Pool Prize
 
-CommunityGiver received the Pool prize from The Graph Protocol for building and deploying a subgraph that indexes data from a smart contract, enabling efficient querying of blockchain data for your dapp.
+[CommunityGiver](https://communitygiver.anuness.dev/) received the Pool prize from [The Graph Protocol](https://thegraph.com/) for building and deploying a subgraph that indexes data from a smart contract, enabling efficient querying of blockchain data for your dapp.
 
 ## Repository Structure
 
@@ -49,6 +49,7 @@ The repository is structured into two main folders:
 
 - **subgraph**: Contains the Subgraph implementation for The Graph Protocol.
 - **frontend**: Contains the frontend application built with Nuxt.js.
+- **.github**: Contains GitHub configuration files, including images for README and other language versions.
 
 ## Other Languages Readme
 

@@ -8,15 +8,15 @@ on:
 jobs:
   cpanel-cicd:
     name: 🎉 Deploy
-
     runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: ./frontend
 
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
-
-      - name: 🛵 Go to frontend folder
-        uses: cd frontend
 
       - name: 😏 Install node
         uses: actions/setup-node@v3
@@ -25,6 +25,7 @@ jobs:
 
       - name: 💎 I prefer yarn
         uses: Borales/actions-yarn@v4.2.0
+        
         with:
           cmd: install
 

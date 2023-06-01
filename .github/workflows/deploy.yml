@@ -15,7 +15,7 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
-      - name: Go to frontend folder
+      - name: 🛵 Go to frontend folder
         uses: cd frontend
 
       - name: 😏 Install node

@@ -9,10 +9,6 @@ jobs:
   cpanel-cicd:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
-    
-    defaults:
-      run:
-        working-directory: ./frontend
 
     steps:
       - name: 🚚 Get latest code
@@ -26,14 +22,13 @@ jobs:
       - name: 💎 I prefer yarn
         uses: Borales/actions-yarn@v4.2.0
         with:
+          dir: 'frontend'
           cmd: install
-
-      - name: ls
-        run: ls -a
         
       - name: 🛠️ Building
         uses: Borales/actions-yarn@v4.2.0
         with:
+          dir: 'frontend'
           cmd: generate
 
       - name: 📂 Sync files

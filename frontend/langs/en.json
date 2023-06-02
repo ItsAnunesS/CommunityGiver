@@ -1,4 +1,13 @@
 {
+  "app": {
+    "title": "CommunityGiver"
+  },
+  "pages": {
+    "projects": {
+      "title": "Projects",
+      "description": "Explore the projects that are changing lives and contribute to the causes that matter most to you. Your donation can create a meaningful impact and help support initiatives in areas such as education, healthcare, environment, and more. Join us in making a difference and empower positive change through your generosity."
+    }
+  },
   "copyright": "All right reserved by CommunityGiver",
   "hero": {
     "title": "Be the CryptoAgent of Change the World Needs!",
